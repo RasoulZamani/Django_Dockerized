@@ -37,10 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     # third party apps
     'crispy_forms',
     'crispy_bootstrap5',
+    'allauth',
+    'allauth.account',
 
     # local apps
     'accounts.apps.AccountsConfig',
@@ -148,3 +151,20 @@ LOGOUT_REDIRECT_URL = 'home'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
+
+# django-allauth config
+LOGIN_REDIRECT_URL = "home"
+ACCOUNT_LOGOUT_REDIRECT = "home"  
+SITE_ID = 1
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+ACCOUNT_SESSION_REMEMBER = True # remove remember me chechbox and set it true for default 
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False  # no ask for twice typing of pass
+ACCOUNT_USERNAME_REQUIRED = False            # no username required for login
+ACCOUNT_AUTHENTICATION_METHOD = "email"      # instead of username it uses email
+ACCOUNT_EMAIL_REQUIRED = True  
+ACCOUNT_UNIQUE_EMAIL = True

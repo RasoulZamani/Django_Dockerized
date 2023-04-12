@@ -21,6 +21,9 @@ STATIC_ROOT         = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 ```
 
+athentication is done by third party app named: **django-allath**, so we can login based on email instead of username. for now, signup email is send to console and can be seen by `docker compose logs`.
+
+____________________________________________________________________________________
 ## usage
 after cloning this repo and installing docker, for running in background at root directory (i.e. near manage.py):  `docker compose up -d --build`
 
