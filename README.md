@@ -1,10 +1,14 @@
 # Dockerized Django App
 
 In this repo I created dockerized web application based on this book:
-Django for Professionals, William S. Vincent
+
+**Django for Professionals, William S. Vincent**
+
+The app is simple educational **book store**. 
 
 ## some implementation details
-this app has basic functionality like: **login, logout** and **signup**.
+This app has basic functionality like: **login, logout** and **signup**.You can see all books and if you click on them you'll see detail of each book.
+Instead of using autoincreament id, we set **uuid** field as **pk**. It is more secure and avoids asynchronization issues
 
 **bootstrap5** and **crispy_forms** is used to better style
 

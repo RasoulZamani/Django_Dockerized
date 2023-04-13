@@ -26,4 +26,5 @@ urlpatterns = [
     # local apps
     #path('accounts/', include('accounts.urls')),# --> replased by allauth...
     path('', include('pages.urls')),
+    path('books/', include('books.urls')),
 ]
